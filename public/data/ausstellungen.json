@@ -1,0 +1,131 @@
+[
+  {
+    "title": "VOYAGE",
+    "anfang": "06.04.26",
+    "ende": "28.06.26",
+    "md": "content/ausstellungen/voyage/voyage.md",
+    "hasPoster": true,
+    "poster": "/content/ausstellungen/voyage/Plakat_voyage.png",
+    "plakat-urheber": "Gérard Peter",
+    "press": []
+  },
+  {
+    "title": "ZEITSPUR",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/zeitspur/zeitspur.md",
+    "hasPoster": true,
+    "poster": "/content/ausstellungen/zeitspur/Plakat_zeitspur.jpg",
+    "plakat-urheber": "Arne Panke",
+    "press": [
+      {
+        "src": "/content/ausstellungen/zeitspur/presse/zeitspur_HNA.jpg",
+        "caption": "HNA Rotenburg a.d.F, 10.09.2025"
+      }
+    ]
+  },
+  {
+    "title": "anSichten_x000D__x000D__x000D_\neinSichten_x000D__x000D__x000D_\nausSichten ",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/ansichten/ansichten.md",
+    "hasPoster": false,
+    "poster": null,
+    "plakat-urheber": null,
+    "press": [
+      {
+        "src": "/content/ausstellungen/ansichten/presse/flyer_ansichten.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Rauminstallation \"verschaltet\"",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/verschaltet/verschaltet.md",
+    "hasPoster": false,
+    "poster": null,
+    "plakat-urheber": null,
+    "press": [
+      {
+        "src": "/content/ausstellungen/verschaltet/presse/Exponiert.jpg"
+      },
+      {
+        "src": "/content/ausstellungen/verschaltet/presse/exponiert_konzept.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Bilderzeit  - Zeitbilder",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/bilderzeit/bilderzeit.md",
+    "hasPoster": true,
+    "poster": "/content/ausstellungen/bilderzeit/Plakat_bilderzeit.jpg",
+    "plakat-urheber": "Arne Panke",
+    "press": [
+      {
+        "src": "/content/ausstellungen/bilderzeit/presse/bilderzeit_HNA_RO_2024-03-30_006.jpg",
+        "caption": "HNA Rotenburg a.d.F , Manuela Kleinwächter, 30.03.2024"
+      }
+    ]
+  },
+  {
+    "title": "Strich & Farbe",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/strichundfarbe/strichundfarbe.md",
+    "hasPoster": false,
+    "poster": null,
+    "plakat-urheber": null,
+    "press": [
+      {
+        "src": "/content/ausstellungen/strichundfarbe/presse/Galerie_auf_Zeit_Ausschnitt.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Neue Bilder und Objekte",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/neuebilderundobjekte/neuebilderundobjekte.md",
+    "hasPoster": true,
+    "poster": "/content/ausstellungen/neuebilderundobjekte/Plakat_neuebilderundobjekte.png",
+    "plakat-urheber": "Arne Panke",
+    "press": [
+      {
+        "src": "/content/ausstellungen/neuebilderundobjekte/presse/neuebilder_HNA_RO_2022-06-07_004.jpg",
+        "caption": "HNA Rotenburg a.d.F, 07.06.2022"
+      }
+    ]
+  },
+  {
+    "title": "Bilder!",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/bilder/bilder.md",
+    "hasPoster": true,
+    "poster": "/content/ausstellungen/bilder/Plakat_Bilder.png",
+    "plakat-urheber": "Arne Panke",
+    "press": [
+      {
+        "src": "/content/ausstellungen/bilder/presse/bilder_HNA_RO_2018-05-03_004.jpg",
+        "caption": "HNA Rotenburg a.d.F, 03.05.2018"
+      }
+    ]
+  },
+  {
+    "title": "Padapeng Gruppenausstellung",
+    "anfang": "",
+    "ende": "",
+    "md": "content/ausstellungen/padapeng/padapeng.md",
+    "hasPoster": false,
+    "poster": null,
+    "plakat-urheber": null,
+    "press": [
+      {
+        "src": "/content/ausstellungen/padapeng/presse/2016-09-PadaPeng35.JPG"
+      }
+    ]
+  }
+]

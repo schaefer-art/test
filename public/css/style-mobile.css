@@ -1,0 +1,864 @@
+
+ /** { outline: 1px solid rgba(255, 0, 0, 0.4); }*/
+ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Inter", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==== Mobile Styles ==== */
+.sidebar-layout {
+  display: block;
+}
+
+.sidebar {
+  display: none;
+}
+
+/* ==== Burger Menu ==== */
+/* ==== Burger button ==== */
+.burger {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 10001;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 40px;
+}
+.burger span {
+  display: block;
+  height: 1.5px;
+  background: #111;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+.burger.is-open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.burger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.burger.is-open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==== Full-screen mobile nav ==== */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+.mobile-nav.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mnav-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 72px 28px 32px;
+  overflow-y: auto;
+}
+
+/* Search */
+.mnav-search {
+  margin-bottom: 28px;
+}
+.mnav-search .search-input {
+  font-size: 1rem;
+  padding: 6px 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+.mnav-search .search-dropdown {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 40vh;
+  overflow-y: auto;
+  z-index: 1100;
+}
+.mnav-search .search-result {
+  padding: 9px 12px;
+}
+.mnav-search .search-result-title {
+  font-size: 0.95rem;
+}
+.mnav-search .search-result-cat {
+  font-size: 0.78rem;
+}
+
+/* Artist name */
+.mnav-artist {
+  margin-bottom: 20px;
+}
+.mnav-artist a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  text-decoration: none;
+}
+
+/* Main nav: Bilder / Objekte / Serien */
+.mnav-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #ebebeb;
+}
+.mnav-main a {
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.mnav-main a:active {
+  color: #666;
+}
+
+/* Secondary nav */
+.mnav-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.mnav-secondary a {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #444;
+  text-decoration: none;
+}
+
+/* Footer row */
+.mnav-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid #ebebeb;
+}
+.mnav-social {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.mnav-social img {
+  height: 17px;
+  opacity: 0.55;
+}
+.mnav-impressum {
+  font-size: 0.78rem;
+  color: #bbb;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+/* ==== Mobile Homepage (Single Image, Clean) ==== */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.homepage-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Title / Subtitle --- */
+.home-intro {
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+.home-intro h2 {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3em;
+}
+
+.home-intro p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- Only one image --- */
+.home-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/* Hide other sections */
+.home-section {
+  display: none;
+}
+
+.home-section:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 65vh;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Image only */
+.home-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Subtle zoom effect */
+.home-section:first-child:hover .home-image img {
+  transform: scale(1.03);
+}
+
+/* Remove overlay entirely */
+.home-overlay {
+  display: none !important;
+}
+
+
+/* ==== Extra Section (Ausstellungen) ==== */
+.extra-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 20px;
+  height: auto;
+}
+
+.extra-text {
+  order: 1;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+.extra-image {
+  order: 2;
+  width: 100%;
+}
+
+.extra-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.home-intro {
+  margin-bottom: 10px;
+}
+
+/* Optional: visual feedback when swiping */
+.arbeit-bild {
+
+}
+
+
+
+/* ==== Main vertical scroller ==== */
+/* show mobile-view, hide desktop-view on <=768px */
+.desktop-view { display: none; pointer-events: none; }
+.mobile-view  { display: block; pointer-events: auto; }
+
+/* Main vertical snap */
+.mobile-view-only { display:block; }
+@media (min-width:769px){ .mobile-view-only{ display:none; } }
+
+.technik-header{scroll-snap-align:start;scroll-margin-top:8vh;}
+
+/* ==== General mobile view ==== */
+.mobile-view-only {
+  display: block;
+}
+
+/* ==== Vertical snapping ==== */
+.arbeiten-main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; 
+  background: #fff;
+  margin-top: 0;
+}
+
+/* ==== Each technique ==== */
+  
+.arbeiten-section {
+  scroll-snap-align: start;
+  height: 100vh;   /* 👈 back to fixed 1 screen */
+  z-index: 1;
+}
+
+.serien-main .arbeiten-section {
+  min-height: 100vh;  /* at least one viewport */
+  height: auto;       /* can grow if grid is taller */
+}
+
+.serien-main {
+  scroll-snap-type: y proximity;
+}
+
+/* ==== Sticky technique title ==== */
+.technik-title-sticky {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 2.8vh 0;
+}
+
+.technik-title-sticky h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #222;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.mobile-swiper {
+  width: 100%;
+  height: 85vh;            /* same as Bilder/Objekte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make slides and zoom container center their content */
+.mobile-swiper .swiper-wrapper {
+  height: 85%;
+}
+
+.mobile-swiper .swiper-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-swiper .swiper-zoom-container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-swiper :global(.swiper-slide) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Just to be safe, define this globally too if needed */
+.carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* ==== Meta info — exact desktop .arbeit-meta style ==== */
+.arbeit-meta {
+  position: fixed;
+  bottom: 2vh;
+  left: 0;
+  z-index: 50;
+  padding: 12px 24px 20px 24px;
+  color: rgba(0, 0, 0, 0.82);
+  max-width: 80vw;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  pointer-events: none;
+}
+.arbeit-meta-head {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55em;
+}
+.arbeit-meta-title {
+  display: block;
+  font-weight: 200;
+  margin-bottom: 4px;
+}
+.arbeit-meta-lines {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.65);
+}
+.arbeit-meta-count {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* ==== Mobile Landing Page ==== */
+.home-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ==== FIRST SCREEN ==== */
+.home-mobile-section.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 100vh;              
+  padding: 65px 20px;
+  box-sizing: border-box;
+}
+
+.home-mobile-title {
+  font-size: 1.5rem;
+  font-family: "Spectral";
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3em;
+}
+
+.home-mobile-subtitle {
+  font-family: "Spectral";
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.2em;
+}
+
+.home-mobile-cat-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-mobile-cat-link:hover {
+  text-decoration: underline;
+}
+
+.home-mobile-image a {
+  display: block;
+}
+
+.home-mobile-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5em;
+}
+
+.home-mobile-introtext {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444;
+  padding: 0 10px;
+  max-width: 600px;
+}
+
+/* ==== SECOND SCREEN (Ausstellungen) ==== */
+.home-mobile-section.ausstellungen {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+.home-mobile-section.ausstellungen h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6em;
+}
+
+.home-mobile-section.ausstellungen h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+.poster-link img {
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== Serien mobile overview grid (Option 1) ==== */
+
+.serien-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 3 columns */
+  gap: 6px;
+  padding: 0 10px 10px;
+  box-sizing: border-box;
+  align-content: start; /* keep grid near the top under the title */
+}
+
+/* Each cell in the grid */
+.serien-grid .grid-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* square thumbnails; remove if you don't like it */
+  overflow: hidden;
+}
+
+/* Thumbnail images */
+.serien-grid .grid-bild {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* fill the square; use 'contain' if you want full image */
+}
+/* ============================================================
+   CONTACT – UNIFIED (desktop + mobile look similar)
+============================================================ */
+
+/* GRID */
+.kontakt-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* LEFT COLUMN */
+.kontakt-left {
+  display: flex;
+  flex-direction: column;
+
+  /* keep the same feel on all sizes */
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.5rem;
+  padding: 2rem 3rem;
+}
+
+/* TEXT */
+.kontakt-text {
+  max-width: 80vw;
+}
+
+.kontakt-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* FORM */
+.kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 80vw
+}
+
+/* make the small intro line consistent */
+.kontakt-form > p {
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* label wrapper */
+.kontakt-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+/* inputs */
+.kontakt-form input,
+.kontakt-form textarea {
+  padding: 0.65rem 0.7rem;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #222;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.kontakt-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.kontakt-form input::placeholder,
+.kontakt-form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.8rem;
+}
+
+.kontakt-form input:hover,
+.kontakt-form textarea:hover {
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* RIGHT COLUMN */
+.kontakt-image {
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* important for cover */
+  display: block;
+}
+
+/* DESKTOP look: calm + complete (no cropping) */
+.kontakt-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;      /* make it feel like a real right panel */
+  object-position: center;
+}
+
+.kontakt-form button {
+  margin-top: 0.75rem;
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.65rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+
+  color: rgba(0, 0, 0, 0.85);
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease,
+    box-shadow 140ms ease, opacity 140ms ease;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.kontakt-form button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.kontakt-form button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================
+   MOBILE – same design, just stacked + slightly tighter
+============================================================ */
+@media (max-width: 900px) {
+  .kontakt-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 7vh
+  }
+
+  /* keep the same centering vibe, just less padding */
+  .kontakt-left {
+    padding: 1.6rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  /* image becomes the second stacked panel, same visual language */
+  .kontakt-image {
+    height: clamp(260px, 42vh, 420px);
+  }
+}
+
+.vita-page {
+  margin-top: 7vh;
+    height: auto;
+  }
+
+  /* stack image + text, keep same design language */
+  .vita-page .extra-section .vita-section {
+    height: auto;
+    min-height: auto;
+    padding: 28px 18px;
+    gap: 18px;
+    display: grid;
+    /* override desktop side-by-side flex */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* make both columns full width */
+  .vita-page .extra-image,
+  .vita-page .extra-text {
+    width: 100%;
+    max-width: 700px; /* keeps the same "desktop column" feel */
+    margin: 0 auto;
+  }
+
+  /* portrait image panel */
+  .vita-page .extra-image {
+    height: clamp(240px, 42vh, 420px);
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .vita-page .extra-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* text: keep it calm + readable */
+  .vita-page .extra-text {
+    font-size: 0.95rem;
+    text-align: left;
+    line-height: 1.65;
+    max-width: 700px;
+  }
+
+  .vita-page .vita-name {
+    margin-top: 0;
+  }
+
+  /* list: slightly tighter so it doesn't feel "huge" on phone */
+  .vita-page .vita-liste {
+    padding-left: 1.35rem;
+    line-height: 1.6;
+  }
+
+  /* section 2 dummy panel behaves like a second image block */
+  .vita-page .extra-image.placeholder {
+    height: clamp(220px, 34vh, 380px);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .vita-page .extra-image.placeholder .dummy {
+    width: 100%;
+    height: 100%;
+  }
+
+/* ========== SPACING FOR THE SECOND TEXT BLOCK ========== */
+
+/* Space between headline and first paragraph */
+.extra-text h2 + p {
+  margin-top: 0.75rem;
+}
+
+.extra-text-artist {
+  text-align: left
+}
+/* Language Switcher (mobile) */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 4px 0;
+}
+
+.lang-switcher a {
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+.lang-switcher a:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.lang-current {
+  color: rgba(0, 0, 0, 0.82);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+
+/* Language switcher on home landing page */
+.home-mobile-lang {
+  padding: 16px 0 8px;
+  display: flex;
+  justify-content: center;
+}

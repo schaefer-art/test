@@ -1,0 +1,170 @@
+[
+  {
+    "title": "Prey and Predator",
+    "year": null,
+    "size": null,
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/prey_and_predator_1.webp",
+      "/img/arbeiten/objekte/prey_and_predator_2.webp",
+      "/img/arbeiten/objekte/prey_and_predator_3.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/prey_and_predator_1.avif",
+      "/img/arbeiten/objekte/thumbs/prey_and_predator_2.avif",
+      "/img/arbeiten/objekte/thumbs/prey_and_predator_3.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 640
+      },
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 400
+      }
+    ]
+  },
+  {
+    "title": "Ausgearbeitet",
+    "year": 2008,
+    "size": "20 × 63 × 34",
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/ausgearbeitet_1.webp",
+      "/img/arbeiten/objekte/ausgearbeitet_2.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/ausgearbeitet_1.avif",
+      "/img/arbeiten/objekte/thumbs/ausgearbeitet_2.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 400
+      }
+    ]
+  },
+  {
+    "title": "Ins Grüne",
+    "year": 2014,
+    "size": "14 × 62 × 32",
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/ins_gruene_1.webp",
+      "/img/arbeiten/objekte/ins_gruene_2.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/ins_gruene_1.avif",
+      "/img/arbeiten/objekte/thumbs/ins_gruene_2.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 400
+      }
+    ]
+  },
+  {
+    "title": "Juttas Sommergarten",
+    "year": null,
+    "size": null,
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/juttas_sommergarten_1.webp",
+      "/img/arbeiten/objekte/juttas_sommergarten_2.webp",
+      "/img/arbeiten/objekte/juttas_sommergarten_3.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/juttas_sommergarten_1.avif",
+      "/img/arbeiten/objekte/thumbs/juttas_sommergarten_2.avif",
+      "/img/arbeiten/objekte/thumbs/juttas_sommergarten_3.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 400
+      }
+    ]
+  },
+  {
+    "title": "La Poesie Moderne",
+    "year": null,
+    "size": null,
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/la_poesie_moderne.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/la_poesie_moderne.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 400
+      }
+    ]
+  },
+  {
+    "title": "Im Fluss",
+    "year": null,
+    "size": "25 × 32 × 12",
+    "misc": null,
+    "misc_fr": null,
+    "misc_en": null,
+    "filenames": [
+      "/img/arbeiten/objekte/ohne_titel_1-1.webp",
+      "/img/arbeiten/objekte/ohne_titel_2-1.webp",
+      "/img/arbeiten/objekte/ohne_titel_3-1.webp"
+    ],
+    "thumbs": [
+      "/img/arbeiten/objekte/thumbs/ohne_titel_1-1.avif",
+      "/img/arbeiten/objekte/thumbs/ohne_titel_2-1.avif",
+      "/img/arbeiten/objekte/thumbs/ohne_titel_3-1.avif"
+    ],
+    "dims": [
+      {
+        "w": 640,
+        "h": 400
+      },
+      {
+        "w": 640,
+        "h": 640
+      },
+      {
+        "w": 640,
+        "h": 640
+      }
+    ]
+  }
+]

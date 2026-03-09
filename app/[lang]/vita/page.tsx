@@ -1,0 +1,20 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
+
+const DesktopVita = dynamic(() => import("./page.desktop"), { ssr: false });
+const MobileVita = dynamic(() => import("./page.mobile"), { ssr: false });
+
+export default function VitaPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile ? <MobileVita /> : <DesktopVita />;
+}
